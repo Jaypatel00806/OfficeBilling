@@ -1,0 +1,254 @@
+/* ---------------- GLOBAL RESET ---------------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-family: "Times New Roman", serif;
+}
+
+/* ---------------- PAGE WRAPPER ---------------- */
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------- INVOICE PAGE ---------------- */
+
+.bill-page {
+  width: 180mm;
+  padding: 25mm 15mm;
+  background: #ffffff;
+  color: #000000;
+  font-size: 14px;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* ---------------- TITLE ---------------- */
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+/* ---------------- PARTY ---------------- */
+
+.party {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* ---------------- TRANSPORT TEXT ---------------- */
+
+.transport-text {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin: 12px 0 18px;
+  text-decoration: underline;
+}
+
+/* ---------------- TEXT INPUT ---------------- */
+
+.plain-input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: #000000;
+  padding: 2px 6px;
+  width: 130px;
+}
+
+.plain-input.wide {
+  width: 350px;
+}
+
+.plain-input:focus {
+  border-bottom: 2px solid #000;
+}
+
+input::selection {
+  background: transparent;
+  color: #000000;
+}
+
+/* ---------------- DATE INPUT ---------------- */
+
+.date-input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: #000;
+  padding: 2px 34px 2px 6px;
+  width: 170px;
+  cursor: pointer;
+}
+
+.date-input:focus {
+  border-bottom: 2px solid #000;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.date-input::-webkit-inner-spin-button,
+.date-input::-webkit-clear-button {
+  display: none;
+}
+
+/* ---------------- TABLE ---------------- */
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.bill-table th,
+.bill-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+
+  /* WRAP FIX */
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+
+  vertical-align: top;
+  height: auto;
+  min-height: 36px;
+}
+
+.bill-table th {
+  font-weight: bold;
+}
+
+.bill-table input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000000;
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px 2px;
+
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.bill-table td:last-child input {
+  text-align: left;
+}
+
+/* ---------------- TOTAL + RUPEES ---------------- */
+
+.total-row td {
+  font-weight: bold;
+}
+
+.rupees-row td {
+  text-align: left;
+  font-weight: bold;
+  padding: 12px;
+}
+
+/* ---------------- ADD ROW ---------------- */
+
+.add-row {
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 30px;
+}
+
+.footer-bold {
+  font-weight: bold;
+  font-size: 14px;
+  grid-column: 1;
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  grid-column: 3;
+  text-align: right;
+}
+
+/* ---------------- PDF BUTTON ---------------- */
+
+.pdf-btn {
+  margin: 30px 0;
+  padding: 10px 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ---------------- PRINT SAFE ---------------- */
+
+tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+@media print {
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .pdf-btn,
+  .add-row {
+    display: none;
+  }
+
+  .bill-page {
+    width: 100%;
+    padding: 0;
+  }
+
+  table {
+    page-break-inside: fixed;
+  }
+
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

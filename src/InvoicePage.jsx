@@ -233,7 +233,7 @@ export default function InvoicePage() {
 
       // NORMAL HEADER ROW
       [
-        "Sr",
+        "Sr No",
         "Date",
         "Truck",
         "From",
